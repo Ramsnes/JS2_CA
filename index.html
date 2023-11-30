@@ -57,7 +57,7 @@
         <!-- Headings end -->
 
         <!-- Form  -->
-        <form action="/profile" method="get">
+        <form id="loginForm" action="/profile" method="get">
           <div class="form-group">
             <label for="username">Username</label>
             <input
@@ -83,7 +83,11 @@
             <input type="checkbox" class="form-check-input" id="rememberMe" />
             <label class="form-check-label" for="rememberMe">Remember me</label>
           </div>
-          <button type="submit" class="btn login-btn btn-primary mt-3 mb-3">
+          <button
+            type="submit"
+            id="submitBtn"
+            class="btn login-btn btn-primary mt-3 mb-3"
+          >
             Login
           </button>
           <p>

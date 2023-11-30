@@ -1,5 +1,71 @@
-@import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "variables";
 @import "feed";
 @import "profile";
 @import "navbar";
+
+html {
+  position: $ps-rltv;
+  min-height: $wdth-max;
+}
+body {
+  margin: $m-0;
+  padding: $p-0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  background: $blue-bckg;
+}
+
+.headers {
+  text-align: $txt-algn-cntr;
+}
+
+h1,
+h3 {
+  color: $gold;
+  text-align: $algn-ctr;
+}
+
+h2 {
+  color: $white;
+  text-align: $algn-ctr;
+}
+
+label,
+p {
+  color: $white;
+}
+
+.current {
+  text-decoration: $txt-dec-und;
+}
+
+.mobile h1 {
+  font-size: $fnt-sz-sm;
+}
+
+// form
+form {
+  align-items: $algn-ctr;
+  display: $dsp-flx-flx;
+  flex-direction: $flx-drct-cl;
+}
+
+footer {
+  position: relative;
+  bottom: $btm-0;
+  width: $wdth-max;
+}
+
+footer .nav-link {
+  color: $white;
+}
+
+.login-btn {
+  background: $gold;
+  color: $black;
+}
+
+.login-btn:hover {
+  background: $gold-hvr;
+}

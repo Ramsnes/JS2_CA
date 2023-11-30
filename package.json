@@ -1,7 +1,7 @@
 {
   "name": "js2_ca",
   "version": "1.0.0",
-  "description": "test test2",
+  "description": "Course assignment for JavaScript2",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "watch": "sass --watch src/sass:dist/css & live-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Morten Ramfjord",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.2"

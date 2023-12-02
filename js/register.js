@@ -1,39 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const registrationForm = document.getElementById("registrationForm"); //form
+import { fetcher } from "./fetcher.js";
+import { REGISTER_API_URL } from "./common/constants.js";
 
-  registrationForm.addEventListener("submit", function (event) {
-    event.preventDefault(); //prevents default behavious
-    // id of all form id's
-    const registerUsername = document.getElementById("registerUsername").value;
-    const registerEmail = document.getElementById("registerEmail").value;
-    const registerPassword = document.getElementById("registerPassword").value;
-    register(registerUsername, registerEmail, registerPassword);
+// Register user
+// 1. Get the user data form the form
+// 2. Do a post request to the server
+// 3. User register only gets 201 created once, then error
+
+const form = document.querySelector("#registrationForm");
+const name = document.querySelector("#registerUsername");
+const email = document.querySelector("#registerEmail");
+const password = document.querySelector("#registerPassword");
+
+async function registerUser(user) {
+  console.log("Register user:", user); //User = user object
+  // POST request
+  const postBody = JSON.stringify(user);
+  const myData = await fetcher(REGISTER_API_URL, {
+    method: "POST",
+    body: postBody,
   });
+  console.log(myData);
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const userRegistrationDetails = {
+    name: name.value,
+    email: email.value,
+    password: password.value,
+  };
+  registerUser(userRegistrationDetails); //hoisted
 });
 
-async function register(username, email, password) {
-  try {
-    const response = await fetch("/social/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: username,
-        email: email,
-        password: password,
-      }),
-    });
-
-    if (!response.ok) {
-      throw new Error("Registration failed");
-    }
-
-    const data = await response.json();
-    console.log("Registration successful:", data);
-    // Optionally redirect user to login or another page
-    window.location.href = "/login";
-  } catch (error) {
-    console.error("Registration error:", error);
-  }
+function main() {
+  //
 }
+
+main();

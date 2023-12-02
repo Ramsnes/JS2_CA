@@ -16,28 +16,27 @@
     <title>Feed | CodeSharing</title>
   </head>
   <body>
+    <!-- nav  -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse.show navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav fs-3 text">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../profile/index.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link current" href="#">Feed</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- nav end -->
     <main>
-      <!-- nav  -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="collapse.show navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav fs-3 text">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../profile/index.html">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link current" href="#">Feed</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- nav end -->
-
       <!-- search bar -->
       <h2 class="my-5">Search for your favorite codes</h2>
-      <div class="container mt-5 mb-3">
+      <section class="container mt-5 mb-3">
         <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2 my-3"
@@ -49,12 +48,12 @@
             Search
           </button>
         </form>
-      </div>
+      </section>
       <!-- search bar end -->
 
       <!-- Feed posts -->
       <h2>Your feed</h2>
-      <div class="container mt-3">
+      <section class="container mt-3">
         <div class="row justify-content-evenly">
           <!-- Sort btn  -->
           <div class="dropdown d-flex justify-content-center">
@@ -160,12 +159,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
       <!-- Feed posts end -->
 
-      <h2 class="mt-5 mb-4">Submit your own post</h2>
       <!--  form  -->
-      <div class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column">
+      <h2 class="mt-5 mb-4">Submit your own post</h2>
+      <section
+        class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
+      >
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label"
             >Email address</label
@@ -192,20 +193,22 @@
           >Default file input example</label
         >
         <input class="form-control" type="file" id="formFile" /> -->
-      </div>
+      </section>
 
       <!-- Form check human  -->
-      <div class="mb-3 form-check d-flex my-2 justify-content-center">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label mx-2" for="exampleCheck1"
-          >I am human</label
-        >
-      </div>
-      <div class="m-2 d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-      <!-- Form check human end  -->
-      <!-- form end -->
+      <section>
+        <div class="mb-3 form-check d-flex my-2 justify-content-center">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label mx-2" for="exampleCheck1"
+            >I am human</label
+          >
+        </div>
+        <div class="m-2 d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <!-- Form check human end  -->
+        <!-- form end -->
+      </section>
 
       <!-- Footer  -->
       <footer class="py-3 my-4 mt-5">
@@ -224,10 +227,11 @@
       </footer>
       <!-- Footer end -->
     </main>
-    <script
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+    <script src="../js/logout.js"></script>
   </body>
 </html>

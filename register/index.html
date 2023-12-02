@@ -17,28 +17,28 @@
     <title>Register | CodeSharing</title>
   </head>
   <body>
-    <main>
-      <!-- nav  -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="collapse.show navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav fs-3 text">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile/index.html">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feed/index.html">Feed</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- nav end -->
+    <!-- nav  -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse.show navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav fs-3 text">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../profile/index.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../feed/index.html">Feed</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- nav end -->
 
+    <main>
       <div class="container mg-dark d-flex flex-column">
         <!-- responsive headings  -->
-        <div class="headers">
+        <section class="headers">
           <div class="text p-5 text-light d-sm-none d-xs-none">
             <h3>CodeSharing on your mobile</h3>
           </div>
@@ -54,46 +54,55 @@
             Join hundreds of others and share your code, and contribute in
             developing each others' coding-skills!
           </p>
-        </div>
+        </section>
         <!-- Headings end -->
 
         <!-- Form  -->
-        <form id="registrationForm" action="/register" method="post">
-          <div class="form-group">
-            <label for="registerUsername">Username</label>
-            <input
-              type="text"
-              class="form-control narrow-input"
-              id="registerUsername"
-              name="name"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="registerEmail">Email</label>
-            <input
-              type="email"
-              class="form-control narrow-input"
-              id="registerEmail"
-              name="email"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="registerPassword">Password</label>
-            <input
-              type="password"
-              class="form-control narrow-input"
-              id="registerPassword"
-              name="password"
-              required
-              minlength="8"
-            />
-          </div>
-          <button type="submit" class="btn register-btn btn-primary mt-3 mb-3">
-            Register
-          </button>
-        </form>
+        <section>
+          <form id="registrationForm" action="/register" method="post">
+            <div class="form-group">
+              <label for="registerUsername">Username</label>
+              <input
+                type="text"
+                class="form-control narrow-input"
+                id="registerUsername"
+                name="name"
+                required
+                value="Ramfjord"
+              />
+            </div>
+            <div class="form-group">
+              <label for="registerEmail">Email</label>
+              <input
+                type="email"
+                class="form-control narrow-input"
+                id="registerEmail"
+                name="email"
+                required
+                value="test_morten@noroff.no"
+              />
+            </div>
+            <div class="form-group">
+              <label for="registerPassword">Password</label>
+              <input
+                type="password"
+                class="form-control narrow-input"
+                id="registerPassword"
+                name="password"
+                required
+                minlength="8"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long."
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn register-btn btn-primary mt-3 mb-3"
+            >
+              Register
+            </button>
+          </form>
+        </section>
         <!-- Form end -->
       </div>
 
@@ -114,6 +123,6 @@
       </footer>
       <!-- Footer end -->
     </main>
-    <script src="/js/register.js"></script>
+    <script type="module" src="/js/register.js"></script>
   </body>
 </html>

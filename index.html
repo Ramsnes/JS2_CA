@@ -17,28 +17,28 @@
     <title>Home | CodeSharing</title>
   </head>
   <body>
-    <main>
-      <!-- nav  -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="collapse.show navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav fs-3 text">
-            <li class="nav-item">
-              <a class="nav-link current" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profile/index.html">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feed/index.html">Feed</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- nav end -->
+    <!-- nav  -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse.show navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav fs-3 text">
+          <li class="nav-item">
+            <a class="nav-link current" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile/index.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feed/index.html">Feed</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- nav end -->
 
+    <main>
       <div class="container mg-dark d-flex flex-column">
-        <!-- responsive headings  -->
-        <div class="headers">
+        <!-- Heading  -->
+        <section class="headers">
           <div class="text p-5 text-light d-sm-none d-xs-none">
             <h3>CodeSharing on your mobile</h3>
           </div>
@@ -54,50 +54,53 @@
             Join hundreds of others and share your code, and contribute in
             developing each others' coding-skills!
           </p>
-        </div>
-        <!-- Headings end -->
+        </section>
+        <!-- Heading end -->
 
         <!-- Form  -->
-        <form id="loginForm" action="/profile" method="get">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input
-              type="text"
-              class="form-control narrow-input"
-              id="username"
-              name="username"
-              required
-            />
-          </div>
+        <section>
+          <form id="loginForm" action="/profile" method="get">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control narrow-input" id="email"
+              name="email" required value="test_morten@noroff.no"" />
+            </div>
 
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              class="form-control narrow-input"
-              id="password"
-              name="password"
-              required
-              minlength="8"
-            />
-          </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control narrow-input"
+                id="password"
+                name="password"
+                required
+                minlength="8"
+                value="Testing123"
+              />
+            </div>
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="rememberMe" />
-            <label class="form-check-label" for="rememberMe">Remember me</label>
-          </div>
-          <button
-            type="submit"
-            id="submitBtn"
-            class="btn login-btn btn-primary mt-3 mb-3"
-          >
-            Login
-          </button>
-          <p>
-            Don't have an account?
-            <a href="/register/index.html" class="text-danger">Register here</a>
-          </p>
-        </form>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" />
+              <label class="form-check-label" for="rememberMe"
+                >Remember me</label
+              >
+            </div>
+            <button
+              type="submit"
+              id="submitBtn"
+              class="btn login-btn btn-primary mt-3 mb-3"
+            >
+              Login
+            </button>
+            <p>
+              Don't have an account?
+              <a href="/register/index.html" class="text-danger"
+                >Register here</a
+              >
+            </p>
+          </form>
+        </section>
+
         <!-- Form end -->
       </div>
 
@@ -118,7 +121,6 @@
       </footer>
       <!-- Footer end -->
     </main>
-    <script src="path/to/login.js"></script>
-    <script src="path/to/register.js"></script>
+    <script type="module" src="./js/login.js"></script>
   </body>
 </html>

@@ -4,6 +4,11 @@
 @import "profile";
 @import "navbar";
 
+html,
+body {
+  height: 100vh;
+}
+
 html {
   position: $ps-rltv;
   min-height: $wdth-max;
@@ -68,4 +73,9 @@ footer .nav-link {
 
 .login-btn:hover {
   background: $gold-hvr;
+}
+
+#logoutButton {
+  background: $black;
+  color: gold;
 }

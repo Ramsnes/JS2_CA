@@ -19,8 +19,15 @@ async function registerUser(user) {
     method: "POST",
     body: postBody,
   });
+
+  // Log the entire response for debugging
+  console.log("Full API Response:", response);
   console.log(myData);
 }
+
+//
+//
+// Form
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();

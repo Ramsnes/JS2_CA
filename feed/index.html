@@ -171,53 +171,60 @@
       </section>
       <!-- Feed posts end -->
 
-      <!--  form  -->
+      <!-- Form to submit a new post -->
       <h2 class="mt-5 mb-4">Submit your own post</h2>
       <section
         class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
       >
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label"
-            >Email address</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="Your subject"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label"
-            >Example textarea</label
-          >
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-            placeholder="Your text here"
-          ></textarea>
-        </div>
-        <!-- <label for="formFile" class="form-label"
-          >Default file input example</label
-        >
-        <input class="form-control" type="file" id="formFile" /> -->
+        <form id="postForm">
+          <div class="mb-3">
+            <label for="postTitle" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="postTitle"
+              placeholder="Your post title"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="postBody" class="form-label">Post Body</label>
+            <textarea
+              class="form-control"
+              id="postBody"
+              rows="3"
+              placeholder="Your post text here"
+              required
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="postTags" class="form-label"
+              >Tags (comma-separated)</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="postTags"
+              placeholder="tag1, tag2, tag3"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="postMedia" class="form-label"
+              >Media URL (optional)</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="postMedia"
+              placeholder="https://url.com/image.jpg"
+            />
+          </div>
+          <div class="m-2 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </section>
-
-      <!-- Form check human  -->
-      <section>
-        <div class="mb-3 form-check d-flex my-2 justify-content-center">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label mx-2" for="exampleCheck1"
-            >I am human</label
-          >
-        </div>
-        <div class="m-2 d-flex justify-content-center">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        <!-- Form check human end  -->
-        <!-- form end -->
-      </section>
+      <!-- form end -->
 
       <!-- Footer  -->
       <footer class="py-3 my-4 mt-5">
@@ -243,6 +250,7 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="../js/logout.js"></script>
+    <script type="module" src="../js/fetcher.js"></script>
     <script type="module" src="../js/posts.js"></script>
   </body>
 </html>

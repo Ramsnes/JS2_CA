@@ -1,5 +1,9 @@
 import { getFromLocalStorage } from "./common/utils/localStorageUtil.js";
 
+// Checks if token is present
+const accessToken = getFromLocalStorage("accessToken");
+console.log("Access Token:", accessToken);
+
 export async function fetcher(
   url,
   options = { method: "POST" },
@@ -10,6 +14,7 @@ export async function fetcher(
       ...options,
       headers: { "Content-Type": "application/json" },
     };
+
     //if Auth, add token to header
     if (shouldUseAuth) {
       const accessToken = getFromLocalStorage("accessToken");

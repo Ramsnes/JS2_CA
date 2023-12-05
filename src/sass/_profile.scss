@@ -58,6 +58,18 @@
   border-color: $black;
 }
 
+#logoutButton {
+  background: $black;
+  color: $gold;
+  border-color: $black;
+}
+
+#logoutButton:hover {
+  background: $gold;
+  color: $black;
+  border-color: $black;
+}
+
 .heart-icon path {
   fill: $pink;
 }

@@ -17,11 +17,11 @@ document
 
 // Function to perform a search for posts
 async function searchPosts(search) {
-  const apiUrl = `${BASE_API_URL}/social/posts?_title=${search}&_active=true`; // Search by title
+  const apiUrl = `${BASE_API_URL}/social/posts?_tag=${search}&_active=true`; // Search by tag
 
   try {
     // Make the API call and return the search results
-    const searchResults = await fetcher(apiUrl, { method: "GET" });
+    const searchResults = await fetcher(apiUrl, { method: "GET" }, true);
 
     // Check if searchResults is an array
     if (Array.isArray(searchResults)) {

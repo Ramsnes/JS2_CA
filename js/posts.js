@@ -46,6 +46,7 @@ function renderPost(post) {
   // Create HTML elements for the post
   const postElement = document.createElement("div");
   postElement.className = "card m-3 small-card p-0";
+  postElement.setAttribute("data-created", post.created); // Adds created attribute from sort.js
 
   // Add post content (modify this based on your post structure)
   postElement.innerHTML = `

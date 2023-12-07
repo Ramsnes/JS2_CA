@@ -33,10 +33,36 @@
       </div>
     </nav>
     <!-- nav end -->
+
+    <!-- Sort btn  -->
+    <div id="searchContainer" class="dropdown d-flex justify-content-center">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton1"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Sort
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li>
+          <a class="dropdown-item" href="#" id="sortLatest">Latest</a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#" id="sortOldest">Oldest</a>
+        </li>
+        <li><a class="dropdown-item" href="#" id="sortAZ">a-z</a></li>
+        <li><a class="dropdown-item" href="#" id="sortZA">z-a</a></li>
+      </ul>
+    </div>
+
     <main>
       <!-- search bar -->
-      <section class="container mt-5 mb-3 d-flex flex-column">
-        <h2 class="my-5">Search for your favorite codes</h2>
+      <section
+        class="container mt-3 d-flex flex-column justify-content-center text-center"
+      >
+        <h2 class="mt-5 mb-3">Search posts</h2>
         <form id="searchForm" class="form-inline my-2 my-lg-0">
           <input
             id="searchInput"
@@ -58,129 +84,21 @@
             </button>
           </div>
         </form>
-      </section>
-      <!-- search bar end -->
+        <!-- search bar end -->
 
-      <!-- Sort posts -->
-      <section
-        class="container mt-3 d-flex flex-column justify-content-center text-center"
-      >
-        <h2>Your feed</h2>
+        <!-- Sort posts -->
         <div id="postsContainer" class="row justify-content-evenly mt-3">
-          <!-- Sort btn  -->
-          <div class="dropdown d-flex justify-content-center">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sort
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Latest</a></li>
-              <li><a class="dropdown-item" href="#">Oldest</a></li>
-              <li><a class="dropdown-item" href="#">a-z</a></li>
-              <li><a class="dropdown-item" href="#">z-a</a></li>
-            </ul>
-          </div>
+          <h2>Your feed</h2>
         </div>
       </section>
       <!-- Sort end -->
 
       <!-- Feed posts  -->
-
-      <section class="container mt-5 mb-3">
-        <!-- <div class="card m-3 small-card p-0">
-            <img
-              src="../images/arrayobject.jpeg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Arrays and objects</h5>
-              <p class="card-text">
-                This post will explain the key differences between arrays and
-                objects, and how the work together.
-              </p>
-              <img src="/images/p1.jpeg" />
-            </div>
-          </div>
-          <div class="card m-3 small-card p-0">
-            <img
-              src="../images/bootstrap-5-layout.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Bootstrap</h5>
-              <p class="card-text">
-                Here I am explaining some of the key factors of working with
-                bootstrap, and how you can utilize is effectively.
-              </p>
-              <img src="/images/p2.jpeg" />
-            </div>
-          </div>
-          <div class="card m-3 small-card p-0">
-            <img
-              src="../images/frameworks.jpeg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Frameworks</h5>
-              <p class="card-text">
-                An in-depth explanations of how frameworks operate, and how the
-                make your coding much more enjoyable and easy to pull off.
-              </p>
-              <img src="/images/p3.jpeg" />
-            </div>
-          </div>
-          <div class="card m-3 small-card p-0">
-            <img
-              src="../images/functions.jpeg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Functions</h5>
-              <p class="card-text">
-                I am posting some of my explanations on how functions work,
-                based off of what helped me to better understand them and how to
-                use them effectively.
-              </p>
-              <img src="/images/p4.jpeg" />
-            </div>
-          </div>
-          <div class="card m-3 small-card p-0">
-            <img src="../images/html.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">HTML</h5>
-              <p class="card-text">
-                A beginner-friendly walkthrough on HTML and how to use it to the
-                best of your abilities in the beginnning of your coding-journey.
-              </p>
-              <img src="/images/p5.jpeg" />
-            </div>
-          </div>
-          <div class="card m-3 small-card p-0">
-            <img src="../images/htmlcss.jpeg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">HTML & CSS</h5>
-              <p class="card-text">
-                I've made a guide on how I like to combine HTML with CSS, and to
-                make it as DRY as possible, and keeping it structured using som
-                of my simple syntax principles.
-              </p>
-              <img src="/images/p6.jpeg" />
-            </div>
-          </div>     -->
-      </section>
-
+      <section class="container mt-5 mb-3"></section>
       <!-- Feed posts end -->
 
       <!-- Form to submit a new post -->
+      <
       <section
         class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
       >
@@ -262,5 +180,6 @@
     <script type="module" src="../js/fetcher.js"></script>
     <script type="module" src="../js/posts.js"></script>
     <script type="module" src="../js/search.js"></script>
+    <script type="module" src="../js/sort.js"></script>
   </body>
 </html>

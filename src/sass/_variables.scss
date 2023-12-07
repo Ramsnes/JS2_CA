@@ -9,6 +9,21 @@ $grid-breakpoints: (
   xxl: 1400px,
 );
 
+// Alternatives
+$auto: auto;
+
+// Pixels
+$px1: 10px;
+$px2: 20px;
+$px3: 30px;
+$px4: 40px;
+$px5: 50px;
+$px6: 60px;
+$px7: 70px;
+$px6: 80px;
+$px9: 90px;
+$px10: 100px;
+
 // positions
 $btm-0: 0;
 $ps-rltv: relative;
@@ -67,8 +82,10 @@ $wdth-7: 70%;
 $wdth-8: 80%;
 $wdth-9: 90%;
 $wdth-max: 100%;
-
+// Viewport
+$wdth-vh-1: 10vh;
 $vh-hgth-2: 20vh;
+$wdth-vh-3: 30vh;
 
 // border/radius
 $brdr-rdius-100: 100px;

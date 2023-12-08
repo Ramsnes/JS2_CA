@@ -1,3 +1,5 @@
+// search.js
+
 import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
 
@@ -6,9 +8,8 @@ document
   .getElementById("searchForm")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
-    // Get the search input value
     const searchInput = document.getElementById("searchInput").value;
-    // Does search API call
+
     if (searchInput.trim() !== "") {
       const searchResults = await searchPosts(searchInput);
       displaySearchResults(searchResults);
@@ -18,24 +19,14 @@ document
 // Function to perform a search for posts
 async function searchPosts(search) {
   // Check if the search input is empty
-  console.log("Search value:", search);
+  console.log("Search value:", search); // delete
 
-  // Construct the API URL with additional search criteria
-  const apiUrl = `${BASE_API_URL}/social/posts?_tag=${search}&_active=true&_author=true&_comments=true&_reactions=true`;
+  // tag search
+  const apiUrl = `${BASE_API_URL}/social/posts?_tag=${search}&_active=true`;
 
   try {
     // Make the API call and return the search results
-    const allPosts = await fetcher(apiUrl, { method: "GET" }, true);
-
-    // Filter posts based on the search term in tag, body, and author's name
-    const searchResults = allPosts.filter(
-      (post) =>
-        post.tags.some((tag) =>
-          tag.toLowerCase().includes(search.toLowerCase())
-        ) ||
-        post.body.toLowerCase().includes(search.toLowerCase()) ||
-        post.author.name.toLowerCase().includes(search.toLowerCase())
-    );
+    const searchResults = await fetcher(apiUrl, { method: "GET" }, true);
 
     // Check if searchResults is an array
     if (Array.isArray(searchResults)) {
@@ -64,13 +55,20 @@ function displaySearchResults(results) {
     results.forEach((post) => {
       const postElement = createPostElement(post);
       postsContainer.appendChild(postElement);
+      // Navigate to the new page on post click
+      postElement.addEventListener("click", function () {
+        console.log("Post clicked. ID:", post.id); // logs id clicked
+        navigateToPostPage(post.id); // Replace 'id' with the actual property name for post ID
+      });
+
+      postsContainer.appendChild(postElement);
     });
   }
 }
 
 // Function to create an HTML element for a single post
 function createPostElement(post) {
-  // Create and return the HTML element for a single post
+  // Creates and returns the HTML element for a single post
   const postElement = document.createElement("div");
   postElement.className = "card m-3 small-card p-0";
   postElement.innerHTML = `
@@ -78,8 +76,13 @@ function createPostElement(post) {
       <div class="card-body">
         <h5 class="card-title">${post.title}</h5>
         <p class="card-text">${post.body}</p>
-        <!-- Add other post details as needed -->
       </div>
     `;
   return postElement;
+}
+
+// Function to navigate to the new page with the specific post ID
+function navigateToPostPage(postId) {
+  // Replace 'idPage/index.html' with your actual path
+  window.location.href = `../idPage/index.html?id=${postId}`;
 }

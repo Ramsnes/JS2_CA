@@ -3,6 +3,7 @@
 @import "feed";
 @import "profile";
 @import "navbar";
+@import "idPage";
 
 html,
 body {
@@ -37,13 +38,13 @@ footer .nav-link {
   color: $white;
 }
 
-h1,
-h3 {
-  color: $gold;
-  text-align: $algn-ctr;
+h1 {
+  font-size: $fnt-clc;
 }
 
-h2 {
+h1,
+h2,
+h3 {
   color: $white;
   text-align: $algn-ctr;
 }

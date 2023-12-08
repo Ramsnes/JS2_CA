@@ -1,3 +1,6 @@
+console.log("posts.js loaded");
+
+// posts.js
 import { fetcher } from "../js/fetcher.js";
 
 const postForm = document.getElementById("postForm");

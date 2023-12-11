@@ -1,5 +1,16 @@
+//idPage.js
 @import "variables";
 
+#postDetailsContainer {
+  max-width: $wdth-md-sm;
+  margin: 0 auto; /* This will center the container */
+  text-align: center; /* This will center the content inside the container */
+}
+
 .post-image {
-  width: $wdth-sm !important;
+  max-height: $wdth-md-sm;
+}
+
+#feedBtns {
+  align-self: $algn-ctr;
 }

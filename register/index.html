@@ -20,7 +20,7 @@
     <!-- nav  -->
     <nav class="navbar navbar-expand-lg">
       <div class="collapse.show navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav fs-3 text">
+        <ul class="navbar-nav fs-3 text mx-5 my-3">
           <li class="nav-item">
             <a class="nav-link" href="../index.html">Home</a>
           </li>
@@ -48,9 +48,9 @@
             Join hundreds of others and share your code, and contribute in
             developing each others' coding-skills!
           </p>
-          <div class="fontPageImg my-2">
-            <img src="../images/code01-.jpeg" alt="coding screen" />
-          </div>
+          <!-- <div class="fontPageImg my-2">
+              <img src="../images/code01-.jpeg" alt="coding screen" />
+            </div> -->
         </section>
         <!-- Headings end -->
 
@@ -89,12 +89,21 @@
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               />
             </div>
-            <button
-              type="submit"
-              class="btn register-btn btn-primary mt-3 mb-3"
-            >
-              Register
-            </button>
+            <div class="regBtns">
+              <button
+                type="button"
+                id="backButton"
+                class="btn btn-secondary mt-3 mb-3 me-2"
+              >
+                Back
+              </button>
+              <button
+                type="submit"
+                class="btn register-btn btn-primary mt-3 mb-3"
+              >
+                Register
+              </button>
+            </div>
           </form>
         </section>
         <!-- Form end -->
@@ -118,5 +127,6 @@
       <!-- Footer end -->
     </main>
     <script type="module" src="/js/register.js"></script>
+    <script type="module" src="../js/backBtn.js"></script>
   </body>
 </html>

@@ -1,3 +1,4 @@
+// localStorageUtil.js
 export function addToLocalStorage(key, value) {
   localStorage.setItem(key, value);
 }

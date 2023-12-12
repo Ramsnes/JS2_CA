@@ -1,16 +1,12 @@
+// login.js
 import { fetcher } from "./fetcher.js";
 import { LOGIN_API_URL, POSTS_API_URL } from "./common/constants.js";
 import { addToLocalStorage } from "./common/utils/localStorageUtil.js";
+import { displayPosts } from "./common/utils/displayPosts.js";
 
 const form = document.querySelector("#loginForm");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-
-async function displayPosts() {
-  const posts = await fetcher(POSTS_API_URL, { method: "GET" }, true);
-  console.log(posts);
-  // Pretend to display the posts
-}
 
 async function loginUser(user) {
   const postBody = JSON.stringify(user);

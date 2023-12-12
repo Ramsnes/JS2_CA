@@ -18,7 +18,7 @@ document.getElementById("sortZA").addEventListener("click", function () {
 function sortPosts(sortBy) {
   const postsContainer = document.getElementById("postsContainer");
   const posts = Array.from(postsContainer.children);
-  // case names appended to id's in feed html
+
   switch (sortBy) {
     case "latest":
       posts.sort((a, b) => {

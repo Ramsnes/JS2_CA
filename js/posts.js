@@ -1,6 +1,5 @@
-console.log("posts.js loaded");
-
 // posts.js
+// for creating new posts
 import { fetcher } from "../js/fetcher.js";
 
 const postForm = document.getElementById("postForm");

@@ -1,3 +1,4 @@
+// logout.js
 import { removeFromLocalStorage } from "./common/utils/localStorageUtil.js";
 
 const logoutUser = () => {

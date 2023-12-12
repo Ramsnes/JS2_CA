@@ -1,7 +1,7 @@
 // search.js
 
-import { fetcher } from "./fetcher.js";
-import { BASE_API_URL } from "./common/constants.js";
+import { fetcher } from "../../fetcher.js";
+import { BASE_API_URL } from "../constants.js";
 
 // Event listener for the search form submission
 document

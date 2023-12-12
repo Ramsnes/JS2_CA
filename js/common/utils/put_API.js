@@ -1,6 +1,6 @@
 // postService.js
-import { fetcher } from "./fetcher.js";
-import { BASE_API_URL } from "./common/constants.js";
+import { fetcher } from "../../fetcher.js";
+import { BASE_API_URL } from "../constants.js";
 
 export async function updatePost(postId, postData) {
   const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;

@@ -2,7 +2,7 @@ import { fetcher } from "./fetcher.js";
 import { REGISTER_API_URL } from "./common/constants.js";
 
 // Register user
-// 1. Get the user data from the form
+// 1. Get the user data form the form
 // 2. Do a post request to the server
 // 3. User register only gets 201 created once, then error
 

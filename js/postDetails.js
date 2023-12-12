@@ -1,5 +1,4 @@
 // postDetails.js
-// viewing post by id on new html
 import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
 
@@ -41,7 +40,7 @@ function renderPostDetails(postDetails) {
   postContainer.appendChild(postElement);
 
   // Edit
-  const editPostButton = postElement.querySelector("#editPostButton");
+  const editPostButton = postElement.querySelector("#editPostForm");
   editPostButton.addEventListener("click", () => editPost(postDetails.id));
 
   // Delete

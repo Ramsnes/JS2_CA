@@ -1,4 +1,4 @@
-// postService.js
+// put_API.js
 import { fetcher } from "../../fetcher.js";
 import { BASE_API_URL } from "../constants.js";
 

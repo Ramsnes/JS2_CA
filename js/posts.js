@@ -11,13 +11,15 @@ postForm.addEventListener("submit", async (event) => {
   const postTitle = document.getElementById("postTitle").value;
   const postBody = document.getElementById("postBody").value;
   const postMedia = document.getElementById("postMedia").value;
+  const tags = document.getElementById("postTags").value;
 
   const postData = {
     title: postTitle,
     body: postBody,
     media: postMedia,
-    created: new Date().toISOString(), // Include the 'created' property
-    updated: new Date().toISOString(), // Include the 'updated' property
+    created: new Date().toISOString(),
+    updated: new Date().toISOString(),
+    tags: tags.split(","), // Splits the tags strong into an array
   };
 
   try {

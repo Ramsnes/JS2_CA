@@ -24,26 +24,36 @@ function renderPostDetails(postDetails) {
   const postContainer = document.getElementById("postDetailsContainer");
 
   // Create HTML elements for the post details
-  const postElement = document.createElement("div");
-  postElement.className = "post-details";
+  const postElement = document.getElementById("postDetails");
 
   // Add post content (modify this based on your post structure)
   postElement.innerHTML = `
     <h1 id="dynamicPostTitle" class="mt-5 mb-4">${postDetails.title}</h1>
     <p id="dynamicPostBody">${postDetails.body}</p>
-    <img class="post-image" src="${postDetails.media}">
-    <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>
-    <button class="btn btn-danger" onclick="deletePost(${postDetails.id})">Delete</button>
-  `;
+    <img class="post-image" src="${postDetails.media}"/>
+    <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>`;
 
-  // Append the post details to the post container
-  postContainer.appendChild(postElement);
-
-  // Edit
-  const editPostButton = postElement.querySelector("#editPostForm");
-  editPostButton.addEventListener("click", () => editPost(postDetails.id));
-
-  // Delete
-  const deletePostButton = postElement.querySelector("#deletePostButton");
-  deletePostButton.addEventListener("click", () => deletePost(postDetails.id));
+  // Prepend the post details to the post container
+  postContainer.prepend(postElement);
 }
+
+// Delete
+const deletePostButton = document.getElementById("deletePostBtn");
+
+deletePostButton.addEventListener("click", () => {
+  // Get post ID from the URL
+  const postId = new URLSearchParams(window.location.search).get("id");
+
+  // Fetch post details
+  const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
+
+  fetcher(apiUrl, { method: "DELETE" }, true)
+    .then(() => {
+      // Vet ikke hva som skal skje her når det er slettet. Vi navigerer bare for nå
+      console.log("Det er slettet");
+      window.location.href = "../feed/index.html";
+    })
+    .catch((error) => {
+      console.error("Error fetching post details", error);
+    });
+});

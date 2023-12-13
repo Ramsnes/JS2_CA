@@ -22,7 +22,7 @@ async function searchPosts(search) {
   console.log("Search value:", search); // delete
 
   // tag search
-  const apiUrl = `${BASE_API_URL}/social/posts?_tag=${search}&_active=true`;
+  const apiUrl = `${BASE_API_URL}/social/posts?_tag=${search}`;
 
   try {
     // Make the API call and return the search results

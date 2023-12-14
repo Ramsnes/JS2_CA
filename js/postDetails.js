@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postId = new URLSearchParams(window.location.search).get("id");
 
   // Fetch post details
-  const apiUrl = `${BASE_API_URL}/social/posts/${postId}?_author=true&_comments=true&_reactions=true`;
+  const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
 
   fetcher(apiUrl, { method: "GET" }, true)
     .then((postDetails) => {

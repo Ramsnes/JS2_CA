@@ -65,7 +65,7 @@ function renderPost(post) {
   // Append the post to the posts container
   postsContainer.appendChild(postElement);
 
-  // Add click event to navigate to edit-post.html immediately after creation
+  // Add click event to newly created post to navigate to edit-post.html immediately after creation
   postElement.addEventListener("click", () => {
     navigateToEditPost(post.id);
   });

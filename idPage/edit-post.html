@@ -40,13 +40,37 @@
         <h1>Edit Post</h1>
         <form id="editPostForm">
           <label for="editPostTitle">Title:</label>
-          <input type="text" id="editPostTitle" name="editPostTitle" required />
+          <input
+            type="text"
+            id="editPostTitle"
+            placeholder="New title"
+            name="editPostTitle"
+            required
+          />
 
           <label for="editPostBody">Body:</label>
-          <textarea id="editPostBody" name="editPostBody" required></textarea>
+          <textarea
+            id="editPostBody"
+            placeholder="New Body"
+            name="editPostBody"
+            required
+          ></textarea>
 
           <label for="editPostMedia">Media URL:</label>
-          <input type="text" id="editPostMedia" name="editPostMedia" />
+          <input
+            type="text"
+            id="editPostMedia"
+            placeholder="New URL link"
+            name="editPostMedia"
+          />
+
+          <label for="editPostTag">Tags (comma-separated):</label>
+          <input
+            type="text"
+            id="editPostTag"
+            placeholder="tag1, tag2, tag3"
+            name="editPostTag"
+          />
 
           <button type="submit">Save Changes</button>
         </form>
@@ -56,13 +80,13 @@
           <p id="dynamicPostBody">Post Body</p> -->
         </div>
         <div id="feedBtns" class="logout">
-          <button
+          <!-- <button
             type="button"
             id="backButton"
             class="btn btn-secondary mt-3 mb-3 me-2"
           >
             Back
-          </button>
+          </button> -->
           <button
             type="submit"
             id="logoutButton"
@@ -98,8 +122,6 @@
     ></script>
     <script type="module" src="../js/logout.js"></script>
     <script type="module" src="../js/fetcher.js"></script>
-    <script type="module" src="../js/posts.js"></script>
-    <script type="module" src="../js/search.js"></script>
     <script type="module" src="../js/postDetails.js"></script>
     <script type="module" src="../js/editPost.js" defer></script>
     <script type="module" src="../js/common/backBtn.js" defer></script>

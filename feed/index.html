@@ -75,20 +75,29 @@
             id="searchInput"
             class="form-control mr-sm-2 my-3"
             type="search"
-            placeholder="Search car, cat, etc"
+            placeholder="Case sensitive"
             aria-label="Search"
           />
           <div class="d-flex flex-column">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
             </button>
-            <button
-              type="submit"
-              id="logoutButton"
-              class="btn login-btn btn-primary mt-3 mb-3"
-            >
-              Logout
-            </button>
+            <div>
+              <!-- <button
+                type="button"
+                id="backButton"
+                class="btn btn-secondary mt-3 mb-3 me-2"
+              >
+                Back
+              </button> -->
+              <button
+                type="submit"
+                id="logoutButton"
+                class="btn login-btn btn-primary mt-3 mb-3"
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </form>
         <!-- search bar end -->
@@ -182,7 +191,6 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="../js//feed-page.js"></script>
     <script type="module" src="../js/logout.js"></script>
     <script type="module" src="../js/fetcher.js"></script>
     <script type="module" src="../js/posts.js"></script>

@@ -47,6 +47,7 @@ postForm.addEventListener("submit", async (event) => {
 
 function renderPost(post) {
   const postsContainer = document.getElementById("postsContainer");
+  console.log("Rendering post:", post);
 
   // Create HTML elements for the post
   const postElement = document.createElement("div");

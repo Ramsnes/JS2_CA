@@ -1,6 +1,4 @@
-console.log("posts.js loaded");
-
-// posts.js
+// posts.js - creates posts
 import { fetcher } from "../js/fetcher.js";
 
 const postForm = document.getElementById("postForm");
@@ -66,4 +64,14 @@ function renderPost(post) {
 
   // Append the post to the posts container
   postsContainer.appendChild(postElement);
+
+  // Add click event to navigate to edit-post.html immediately after creation
+  postElement.addEventListener("click", () => {
+    navigateToEditPost(post.id);
+  });
+}
+
+// Function to navigate to edit-post.html immediately after creation
+function navigateToEditPost(postId) {
+  window.location.href = `/idPage/edit-post.html?id=${postId}`;
 }

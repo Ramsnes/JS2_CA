@@ -30,7 +30,9 @@ function renderPostDetails(postDetails) {
   postElement.innerHTML = `
     <h1 id="dynamicPostTitle" class="mt-5 mb-4">${postDetails.title}</h1>
     <p id="dynamicPostBody">${postDetails.body}</p>
-    <img class="post-image" src="${postDetails.media}"/>
+    <div class="image-container">
+      <img class="post-image" src="${postDetails.media}"/>
+    </div>
     <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>`;
 
   // Prepend the post details to the post container
@@ -49,7 +51,7 @@ deletePostButton.addEventListener("click", () => {
 
   fetcher(apiUrl, { method: "DELETE" }, true)
     .then(() => {
-      // Vet ikke hva som skal skje her når det er slettet. Vi navigerer bare for nå
+      // Navigating for now
       console.log("Det er slettet");
       window.location.href = "../feed/index.html";
     })

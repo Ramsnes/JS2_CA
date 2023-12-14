@@ -13,14 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((postDetails) => {
       console.log("Post Details for Editing:", postDetails);
 
-      const a = document.getElementById("editPostTitle");
-      console.log(a);
-
       // inputs ferdig fylt
-      document.getElementById("editPostTitle").value = postDetails.title;
-      document.getElementById("editPostBody").value = postDetails.body;
-      document.getElementById("editPostMedia").value = postDetails.media;
-      document.getElementById("editPostTag").value = postDetails.tag;
+      document.getElementById("editPostTitle").value = postDetails.title || "";
+      document.getElementById("editPostBody").value = postDetails.body || "";
+      document.getElementById("editPostMedia").value = postDetails.media || "";
+      document.getElementById("editPostTag").value =
+        postDetails?.tags?.join(", ") || "";
     })
     .catch((error) => {
       console.error("Error fetching post details for editing", error);
@@ -35,6 +33,13 @@ document.getElementById("editPostForm").addEventListener("submit", (event) => {
   const title = document.getElementById("editPostTitle").value;
   const body = document.getElementById("editPostBody").value;
   const media = document.getElementById("editPostMedia").value;
+  const tags = document
+    .getElementById("editPostTag")
+    .value.split(",")
+    // Remove any whitespace from the tags
+    .map((tag) => tag.trim());
+
+  console.log({ title, body, media, tags });
 
   // Get post ID from the URL
   const postId = new URLSearchParams(window.location.search).get("id");
@@ -49,7 +54,7 @@ document.getElementById("editPostForm").addEventListener("submit", (event) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, body, media }),
+      body: JSON.stringify({ title, body, media, tags }),
     },
     true
   )

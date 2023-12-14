@@ -13,5 +13,4 @@ const logoutUser = () => {
 const logoutButton = document.querySelector("#logoutButton");
 if (logoutButton) {
   logoutButton.addEventListener("click", logoutUser);
-  console.log("Logout button clicked"); // Debug
 }

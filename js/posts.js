@@ -1,6 +1,5 @@
 // posts.js - creates posts
 import { fetcher } from "../js/fetcher.js";
-
 const postForm = document.getElementById("postForm");
 
 postForm.addEventListener("submit", async (event) => {
@@ -32,10 +31,6 @@ postForm.addEventListener("submit", async (event) => {
 
     // Render of new post on the page
     renderPost(newPost);
-
-    // Fetch and display the user's posts
-    await fetchAndDisplayUserPosts(loggedInUserName);
-
     console.log("New post created:", newPost);
   } catch (error) {
     console.error("Error creating a new post:", error);
@@ -78,5 +73,3 @@ function renderPost(post) {
 function navigateToEditPost(postId) {
   window.location.href = `/idPage/edit-post.html?id=${postId}`;
 }
-
-const loggedInUserName = getFromLocalStorage("#");

@@ -13,16 +13,16 @@ const password = document.querySelector("#registerPassword");
 
 async function registerUser(user) {
   console.log("Register user:", user); //User = user object
-  // POST request
-  const postBody = JSON.stringify(user);
-  const myData = await fetcher(REGISTER_API_URL, {
-    method: "POST",
-    body: postBody,
-  });
-
-  // Log the entire response for debugging
-  console.log("Full API Response:", response);
-  console.log(myData);
+  try {
+    // POST request
+    const postBody = JSON.stringify(user);
+    const myData = await fetcher(REGISTER_API_URL, {
+      method: "POST",
+      body: postBody,
+    });
+  } catch (error) {
+    console.error("Registration failed: ", error);
+  }
 }
 
 //

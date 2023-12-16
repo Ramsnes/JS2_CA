@@ -9,28 +9,27 @@ export async function fetcher(
   options = { method: "POST" },
   shouldUseAuth = false
 ) {
-  try {
-    let fetchOptions = {
-      ...options,
-      headers: { "Content-Type": "application/json" },
+  let fetchOptions = {
+    ...options,
+    headers: { "Content-Type": "application/json" },
+  };
+
+  //if Auth, add token to header
+  if (shouldUseAuth) {
+    const accessToken = getFromLocalStorage("accessToken");
+    fetchOptions = {
+      ...fetchOptions,
+      headers: {
+        ...fetchOptions.headers,
+        Authorization: `Bearer ${accessToken}`,
+      },
     };
-
-    //if Auth, add token to header
-    if (shouldUseAuth) {
-      const accessToken = getFromLocalStorage("accessToken");
-      fetchOptions = {
-        ...fetchOptions,
-        headers: {
-          ...fetchOptions.headers,
-          Authorization: `Bearer ${accessToken}`,
-        },
-      };
-    }
-
-    const response = await fetch(url, fetchOptions);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error with API call", error);
   }
+
+  const response = await fetch(url, fetchOptions);
+  const data = await response.json();
+  if (response.ok) {
+    return data;
+  }
+  throw new Error(data.errors[0].message);
 }

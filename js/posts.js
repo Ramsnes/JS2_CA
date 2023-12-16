@@ -31,6 +31,7 @@ postForm.addEventListener("submit", async (event) => {
 
     // Render of new post on the page
     renderPost(newPost);
+
     console.log("New post created:", newPost);
   } catch (error) {
     console.error("Error creating a new post:", error);

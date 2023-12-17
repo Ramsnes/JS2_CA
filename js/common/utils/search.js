@@ -42,7 +42,7 @@ async function searchPosts(search) {
 }
 
 // Function to display search results in the UI
-function displaySearchResults(results) {
+export function displaySearchResults(results) {
   const postsContainer = document.getElementById("postsContainer");
   // Clear existing posts
   postsContainer.innerHTML = "";
@@ -70,6 +70,7 @@ function displaySearchResults(results) {
 function createPostElement(post) {
   // Creates and returns the HTML element for a single post
   const postElement = document.createElement("div");
+  postElement.setAttribute("data-created", post.updated);
   postElement.className = "card m-3 small-card p-0";
   postElement.innerHTML = `
       <img src="${post.media}" class="card-img-top" alt="...">

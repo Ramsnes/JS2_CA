@@ -1,16 +1,10 @@
 import { fetcher } from "./fetcher.js";
-import { LOGIN_API_URL, POSTS_API_URL } from "./common/constants.js";
+import { LOGIN_API_URL } from "./common/constants.js";
 import { addToLocalStorage } from "./common/utils/localStorageUtil.js";
 
 const form = document.querySelector("#loginForm");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
-
-async function displayPosts() {
-  const posts = await fetcher(POSTS_API_URL, { method: "GET" }, true);
-  console.log(posts);
-  // Pretend to display the posts
-}
 
 async function loginUser(user) {
   const postBody = JSON.stringify(user);
@@ -27,6 +21,10 @@ async function loginUser(user) {
       },
       false
     );
+
+    if (userLoginData.statusCode === 401) {
+      return alert("Invalid email or password");
+    }
 
     // Assuming the server returns a token on successful login
     const token = userLoginData.accessToken;
@@ -55,5 +53,4 @@ form.addEventListener("submit", async (event) => {
     password: password.value,
   };
   await loginUser(userLoginDetails); //hoisted
-  displayPosts();
 });

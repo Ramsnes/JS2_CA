@@ -20,13 +20,15 @@ async function registerUser(user) {
     body: postBody,
   });
 
-  // Log the entire response for debugging
-  console.log("Full API Response:", response);
-  console.log(myData);
+  if (myData?.errors?.length > 0) {
+    return alert(myData?.errors[0]?.message);
+  }
+
+  // FJERN DET HER OM DU IKKE VIL AT DET SKAL NAVIGERES OG VISES EN ALERT ETTER AT REGISTRERINGEN ER GJENNOMFØRT
+  window.location.href = "/index.html";
+  alert("User created");
 }
 
-//
-//
 // Form
 
 form.addEventListener("submit", (event) => {
@@ -38,9 +40,3 @@ form.addEventListener("submit", (event) => {
   };
   registerUser(userRegistrationDetails); //hoisted
 });
-
-function main() {
-  //
-}
-
-main();

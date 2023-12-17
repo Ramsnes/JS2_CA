@@ -1,9 +1,16 @@
 // posts.js - creates posts
 import { fetcher } from "../js/fetcher.js";
-import { getFromLocalStorage } from "./common/utils/localStorageUtil.js";
+import { POSTS_API_URL } from "./common/constants.js";
+import { displaySearchResults } from "./common/utils/search.js";
 
 const postForm = document.getElementById("postForm");
 const urlFeed = "https://api.noroff.dev/api/v1/social/posts";
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const posts = await fetcher(POSTS_API_URL, { method: "GET" }, true);
+
+  displaySearchResults(posts);
+});
 
 postForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -23,8 +30,8 @@ postForm.addEventListener("submit", async (event) => {
   };
 
   try {
-    const newPost = await fetcher(
-      "https://api.noroff.dev/api/v1/social/posts",
+    const response = await fetcher(
+      urlFeed,
       {
         method: "POST",
         body: JSON.stringify(postData),
@@ -32,17 +39,17 @@ postForm.addEventListener("submit", async (event) => {
       true
     );
 
-    // Render of new post on the page
-    renderPost(newPost);
+    if (response?.errors?.length > 0) {
+      return alert(response?.errors?.[0]?.message || "Something went wrong!");
+    }
 
-    console.log("New post created:", newPost);
+    // Render of new post on the page
+    renderPost(response);
   } catch (error) {
     console.error("Error creating a new post:", error);
   }
 });
 
-//
-//
 // Rendering posts
 
 function renderPost(post) {
@@ -52,7 +59,10 @@ function renderPost(post) {
   // Create HTML elements for the post
   const postElement = document.createElement("div");
   postElement.className = "card m-3 small-card p-0";
-  postElement.setAttribute("data-created", post.created.toISOString()); // Adds created attribute from sort.js
+  postElement.setAttribute(
+    "data-created",
+    new Date(post?.created).toISOString()
+  ); // Adds created attribute from sort.js
 
   // Add post content (modify this based on your post structure)
   postElement.innerHTML = `

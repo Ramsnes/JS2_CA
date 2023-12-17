@@ -57,6 +57,12 @@
           <div class="fontPageImg my-5">
             <img src="./images/code01-.jpeg" alt="coding screen" />
           </div>
+          <div class="loginRules">
+            <p>* Email must containt either @noroff.no or @stud.noroff.no</p>
+            <p>
+              * Password must contain 8 characters, one big letter, and a number
+            </p>
+          </div>
         </section>
         <!-- Heading end -->
 
@@ -67,12 +73,19 @@
         <!-- Login error end  -->
 
         <!-- Form  -->
+        <!-- Test values - Email: test_morten@noroff.no Pass: Testing123 -->
         <section>
           <form id="loginForm" action="/profile" method="get">
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control narrow-input" id="email"
-              name="email" required value="test_morten@noroff.no"" />
+              <input
+                type="email"
+                class="form-control narrow-input"
+                id="email"
+                name="email"
+                placeholder="yourEmail@noroff.no"
+                required
+              />
             </div>
 
             <div class="form-group">
@@ -82,9 +95,9 @@
                 class="form-control narrow-input"
                 id="password"
                 name="password"
+                placeholder="Password"
                 required
                 minlength="8"
-                value="Testing123"
               />
             </div>
 

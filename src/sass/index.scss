@@ -66,6 +66,11 @@ p {
   font-size: $fnt-sz-sm;
 }
 
+#loginRules p {
+  font-size: $fnt-sz-sm;
+  text-align: center;
+}
+
 // form
 form {
   align-items: $algn-ctr;

@@ -1,6 +1,9 @@
 // posts.js - creates posts
 import { fetcher } from "../js/fetcher.js";
+import { getFromLocalStorage } from "./common/utils/localStorageUtil.js";
+
 const postForm = document.getElementById("postForm");
+const urlFeed = "https://api.noroff.dev/api/v1/social/posts";
 
 postForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -49,7 +52,7 @@ function renderPost(post) {
   // Create HTML elements for the post
   const postElement = document.createElement("div");
   postElement.className = "card m-3 small-card p-0";
-  postElement.setAttribute("data-created", post.created); // Adds created attribute from sort.js
+  postElement.setAttribute("data-created", post.created.toISOString()); // Adds created attribute from sort.js
 
   // Add post content (modify this based on your post structure)
   postElement.innerHTML = `

@@ -15,20 +15,36 @@ async function displayPosts() {
 async function loginUser(user) {
   const postBody = JSON.stringify(user);
   try {
+    // Make sure to validate email domain on the server side
     const userLoginData = await fetcher(
       LOGIN_API_URL,
       {
         method: "POST",
         body: postBody,
+        headers: {
+          "Content-Type": "application/json",
+        },
       },
       false
     );
-    const token = userLoginData.accessToken;
-    addToLocalStorage("accessToken", token);
 
-    window.location.href = "/profile/index.html";
+    // Assuming the server returns a token on successful login
+    const token = userLoginData.accessToken;
+
+    // Ensure that the email is from a valid domain
+    const validEmailDomains = ["@noroff.no", "@stud.noroff.no"];
+    const isValidEmail = validEmailDomains.some((domain) =>
+      user.email.endsWith(domain)
+    );
+
+    if (isValidEmail) {
+      addToLocalStorage("accessToken", token);
+      window.location.href = "/profile/index.html";
+    } else {
+      console.error("Invalid email domain");
+    }
   } catch (error) {
-    console.error("Login failes", error);
+    console.error("Login failed", error);
   }
 }
 
@@ -41,9 +57,3 @@ form.addEventListener("submit", async (event) => {
   await loginUser(userLoginDetails); //hoisted
   displayPosts();
 });
-
-function main() {
-  //
-}
-
-main();

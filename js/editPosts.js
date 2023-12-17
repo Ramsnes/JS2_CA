@@ -6,14 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // Get post ID from the URL
   const postId = new URLSearchParams(window.location.search).get("id");
 
-  // Fetche post detaljer
+  // Fetche post details
   const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
 
   fetcher(apiUrl, { method: "GET" }, true)
     .then((postDetails) => {
-      console.log("Post Details for Editing:", postDetails);
-
-      // inputs ferdig fylt
+      // inputs pre-filled
       document.getElementById("editPostTitle").value = postDetails.title || "";
       document.getElementById("editPostBody").value = postDetails.body || "";
       document.getElementById("editPostMedia").value = postDetails.media || "";
@@ -29,22 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("editPostForm").addEventListener("submit", (event) => {
   event.preventDefault();
 
-  // få values fra inputs felt
+  // collect values from input fields
   const title = document.getElementById("editPostTitle").value;
   const body = document.getElementById("editPostBody").value;
   const media = document.getElementById("editPostMedia").value;
   const tags = document
     .getElementById("editPostTag")
     .value.split(",")
-    // Remove any whitespace from the tags
+    // Removes whitespace from the tags
     .map((tag) => tag.trim());
-
-  console.log({ title, body, media, tags });
 
   // Get post ID from the URL
   const postId = new URLSearchParams(window.location.search).get("id");
 
-  // PUT url med id
+  // PUT url with id
   const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
 
   fetcher(
@@ -59,10 +55,7 @@ document.getElementById("editPostForm").addEventListener("submit", (event) => {
     true
   )
     .then(() => {
-      console.log("Changes saved successfully");
-
       const redirectUrl = `/idPage/index.html?id=${postId}`;
-      console.log(redirectUrl);
       window.location.href = redirectUrl;
     })
     .catch((error) => {

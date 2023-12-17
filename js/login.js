@@ -9,7 +9,7 @@ const password = document.querySelector("#password");
 async function loginUser(user) {
   const postBody = JSON.stringify(user);
   try {
-    // Make sure to validate email domain on the server side
+    // Validates email domain on the server side
     const userLoginData = await fetcher(
       LOGIN_API_URL,
       {
@@ -29,7 +29,7 @@ async function loginUser(user) {
     // Assuming the server returns a token on successful login
     const token = userLoginData.accessToken;
 
-    // Ensure that the email is from a valid domain
+    // Ensure that the email is from a valid domain and from @noroff
     const validEmailDomains = ["@noroff.no", "@stud.noroff.no"];
     const isValidEmail = validEmailDomains.some((domain) =>
       user.email.endsWith(domain)

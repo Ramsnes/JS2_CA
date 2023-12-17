@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetcher(apiUrl, { method: "GET" }, true)
     .then((postDetails) => {
-      console.log("Post Details:", postDetails);
       document.title = `Post - ${postDetails.title}`;
       renderPostDetails(postDetails);
     })
@@ -52,7 +51,6 @@ deletePostButton.addEventListener("click", () => {
   fetcher(apiUrl, { method: "DELETE" }, true)
     .then(() => {
       // Navigating for now
-      console.log("Det er slettet");
       window.location.href = "../feed/index.html";
     })
     .catch((error) => {

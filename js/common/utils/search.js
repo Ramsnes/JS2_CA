@@ -18,17 +18,14 @@ document
 
 // Function to perform a search for posts
 async function searchPosts(search) {
-  // Check if the search input is empty
-  console.log("Search value:", search); // delete
-
   // tag search
   const apiUrl = `${BASE_API_URL}/social/posts?_tag=${search}`;
 
   try {
-    // Make the API call and return the search results
+    // Makes the API call and return the search results
     const searchResults = await fetcher(apiUrl, { method: "GET" }, true);
 
-    // Check if searchResults is an array
+    // Checks if searchResults is an array
     if (Array.isArray(searchResults)) {
       return searchResults;
     } else {
@@ -57,7 +54,6 @@ export function displaySearchResults(results) {
       postsContainer.appendChild(postElement);
       // Navigate to the new page on post click
       postElement.addEventListener("click", function () {
-        console.log("Post clicked. ID:", post.id); // logs id clicked
         navigateToPostPage(post.id); // Replace 'id' with the actual property name for post ID
       });
 
@@ -84,6 +80,5 @@ function createPostElement(post) {
 
 // Function to navigate to the new page with the specific post ID
 function navigateToPostPage(postId) {
-  // Replace 'idPage/index.html' with your actual path
   window.location.href = `../idPage/index.html?id=${postId}`;
 }

@@ -10,5 +10,3 @@ export function getFromLocalStorage(key) {
 export function removeFromLocalStorage(key) {
   return localStorage.removeItem(key);
 }
-
-console.log("localStorageUtil module loaded"); // check if loaded several times

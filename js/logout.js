@@ -3,7 +3,6 @@ import { removeFromLocalStorage } from "./common/utils/localStorageUtil.js";
 const logoutUser = () => {
   try {
     removeFromLocalStorage("accessToken");
-    console.log("Logout successful"); // debug
     window.location.href = "/index.html";
   } catch (error) {
     console.error("Error during logout", error);

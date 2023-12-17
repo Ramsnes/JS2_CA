@@ -18,7 +18,7 @@ export async function updatePost(postId, postData) {
       true
     );
 
-    return updatedPost; // Assuming your server responds with the updated post data
+    return updatedPost;
   } catch (error) {
     throw new Error(`Error updating post: ${error.message}`);
   }

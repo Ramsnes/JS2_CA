@@ -54,7 +54,6 @@ postForm.addEventListener("submit", async (event) => {
 
 function renderPost(post) {
   const postsContainer = document.getElementById("postsContainer");
-  console.log("Rendering post:", post);
 
   // Create HTML elements for the post
   const postElement = document.createElement("div");
@@ -64,7 +63,7 @@ function renderPost(post) {
     new Date(post?.created).toISOString()
   ); // Adds created attribute from sort.js
 
-  // Add post content (modify this based on your post structure)
+  // Add post content
   postElement.innerHTML = `
     <img src="${post.media}" class="card-img-top" alt="..." />
     <div class="card-body">

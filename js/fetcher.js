@@ -2,7 +2,6 @@ import { getFromLocalStorage } from "./common/utils/localStorageUtil.js";
 
 // Checks if token is present
 const accessToken = getFromLocalStorage("accessToken");
-console.log("Access Token:", accessToken);
 
 export async function fetcher(
   url,
@@ -15,7 +14,7 @@ export async function fetcher(
       headers: { "Content-Type": "application/json" },
     };
 
-    //if Auth, add token to header
+    //if Authorized, add token to header
     if (shouldUseAuth) {
       const accessToken = getFromLocalStorage("accessToken");
       fetchOptions = {
